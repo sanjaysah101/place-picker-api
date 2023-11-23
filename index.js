@@ -1,7 +1,7 @@
-import fs from "node:fs/promises";
+const fs = require("node:fs/promises");
 
-import bodyParser from "body-parser";
-import express from "express";
+const bodyParser = require("body-parser");
+const express = require("express");
 
 const app = express();
 
@@ -54,8 +54,8 @@ app.use((req, res, next) => {
   res.status(404).json({ message: "404 - Not Found" });
 });
 
-// app.listen(3000, () => {
-//   console.log(`Server running on port http://localhost:3000`);
-// });
+app.listen(3000, () => {
+  console.log(`Server running on port http://localhost:3000`);
+});
 
-export default app;
+module.exports = app;
